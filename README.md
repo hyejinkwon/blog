@@ -21,12 +21,6 @@ npm install -g babel-cli nodemon cross-env
 - nodemon: 파일이 수정 될 때 서버 재 시작
 - cross-env : OS 환경변수값 설정
 
-### 왜죠?
-
-- post 후 뜨는 에러
-- 마지막 server 의미가 뭘까 ? "dev": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=es2015 ./server/index.js --watch server"
-- webpack -w - cache 파일쌓이는 이유?
-
 ### 정리
 
 - react-router 사용법
