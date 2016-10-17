@@ -5,9 +5,9 @@ import Main from './Main';
 import PostLists from './PostLists';
 import PostCreate from './PostCreate';
 import PostDetail from './PostDetail';
-import Posts from '../../server/dummy';
+// import Posts from '../../server/dummy';
 
-global.Posts = new Posts();
+// global.Posts = new Posts();
 
 class App extends Component {
   render() {
