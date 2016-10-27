@@ -11,7 +11,7 @@ http://babeljs.io/docs/usage/cli/
 npm list -g —-depth=0
 `
 
-* 글로벌로 설치 할 모듈: package.json에서 사용하기 위해
+* package.json에서 사용하기 위해 글로벌로 설치 할 모듈
 
 `
 npm install -g babel-cli nodemon cross-env
@@ -25,6 +25,23 @@ npm install -g babel-cli nodemon cross-env
 
 - react-router 사용법
 
+### TODOS
+
+[major]
+- ~~몽고디비 접속~~
+- ~~글 목록가져오기, 글 작성, 글 삭제~~
+- ~~fetch 사용~~
+- 리덕스 사용
+- production vs development 패키지 구분하기
+- 로그인 기능 붙이기  
+
+[minor]
+- 수정 기능, 코멘트 기능
+- 에러 페이지 마크업 및 스타일
+- 마크다운 가능한 에디터 붙이기
+
+[bugs]
+- 서버 랜더링
 ### 참고
 
 [Babel 사용하기](https://blog.outsider.ne.kr/1176)
