@@ -9,7 +9,7 @@ import PostDetail from './PostDetail';
 
 // global.Posts = new Posts();
 
-class App extends Component {
+class Root extends Component {
   render() {
     return (
       <Router history={browserHistory}>
@@ -22,4 +22,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default Root;
