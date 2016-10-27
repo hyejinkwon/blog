@@ -42,6 +42,7 @@ npm install -g babel-cli nodemon cross-env
 
 [bugs]
 - 서버 랜더링
+
 ### 참고
 
 [Babel 사용하기](https://blog.outsider.ne.kr/1176)
