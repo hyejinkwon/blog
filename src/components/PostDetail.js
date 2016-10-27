@@ -8,8 +8,8 @@ class PostDetail extends Component {
       post: {
         name: '',
         title: '',
-        content: '',
-      },
+        content: ''
+      }
     };
   }
   componentDidMount() {

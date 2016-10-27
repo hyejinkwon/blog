@@ -7,7 +7,7 @@ const postSchema = new Schema({
   title: String,
   content: String,
   cuid: { type: String, required: true },
-  updated: { type: Date, default: Date.now },
+  updated: { type: Date, default: Date.now }
 });
 
 

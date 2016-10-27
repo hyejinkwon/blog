@@ -11,15 +11,14 @@ export function getPosts(req, res) {
 }
 
 export function addPost(req, res) {
-  console.log('===>addPost.req', req);
   const { name, title, content } = req.body;
 
-  const newPost = new Post({
-    name,
-    title,
-    content,
-    cuid: cuid(),
-  });
+  const newPost = new Post();
+
+  newPost.name = name;
+  newPost.title = title;
+  newPost.content = content;
+  newPost.cuid = cuid();
 
   newPost.save((err, saved) => {
     if (err) {
