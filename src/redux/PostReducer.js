@@ -13,6 +13,11 @@ const postReducers = (state = initialState, action) => {
         posts: action.posts
       });
     }
+    case ActionTypes.GET_POST: {
+      return Object.assign({}, state, {
+        post: action.post
+      });
+    }
     default:
       return state;
   }

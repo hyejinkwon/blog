@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { Icon } from 'react-materialize';
 
 class Header extends Component {
   render() {
     return (
       <header>
-        <nav className="teal lighten-1">
+        <nav className="teal">
           <div className="nav-wrapper">
-            <Link to="/" className="brand-logo"><img src="../../public/favicon.ico"/></Link>
+            <Link to="/" className="brand-logo">blog</Link>
             <ul className="right hide-on-med-and-down">
-              <li><Link to="/add">Add post</Link></li>
+              <li><Link to="/"><Icon>search</Icon></Link></li>
             </ul>
           </div>
         </nav>
