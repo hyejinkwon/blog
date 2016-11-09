@@ -1,0 +1,7 @@
+.eslintrc
+.eslintignore
+node_modules/
+build/*
+dist/bundle.js.map
+npm-debug.log
+server/dummy.js
