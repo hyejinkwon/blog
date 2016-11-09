@@ -42,7 +42,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loaders: ['react-hot', 'babel?' + JSON.stringify({
-          cacheDirectory: true,   //  수정한 파일만 리 컴파일 
+          // cacheDirectory: true,
           plugins: ['transform-runtime'],
           presets: ['es2015', 'react', 'stage-0']
         })],
