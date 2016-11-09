@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import Main from './components/Main';
 import Login from './containers/Login';
-import Post from './containers/Post';
+import PostContainer from './containers/PostContainer';
 import NotFound from './containers/NotFound';
 
 import PostLists from './components/PostLists';
@@ -20,7 +20,7 @@ class Routes extends Component {
       <Router history={browserHistory}>
         <Route path="/" component={Main}>
           <IndexRoute component={Login} />
-          <Route path="post" component={Post} >
+          <Route path="post" component={PostContainer} >
             { /* Post Routes */ }
             <IndexRoute component={PostLists} />
             <Route path="add" component={PostCreate} />

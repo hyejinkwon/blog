@@ -6,18 +6,6 @@ import {
 } from 'material-ui';
 
 class PostListView extends Component {
-  constructor(props) {
-    super(props);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  componentDidMount() {
-  }
-
-  handleDelete(event) {
-    event.preventDefault();
-  }
-
   render() {
     console.log('PostListView.render', { state: this.state, props: this.props });
     return (
@@ -41,7 +29,10 @@ class PostListView extends Component {
                 targetOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
               >
-                <MenuItem primaryText="Delete" />
+                <MenuItem
+                  primaryText="Delete"
+                  onTouchTap={() => this.props.deletePost(post.cuid)}
+                />
               </IconMenu>
               <CardHeader
                 title={post.name}

@@ -31,7 +31,7 @@ npm install -g babel-cli nodemon cross-env
 - ~~몽고디비 접속~~
 - ~~글 목록가져오기, 글 작성, 글 삭제~~
 - ~~fetch 사용~~
-- 리덕스 사용
+- ~~리덕스 사용~~
 - production vs development 패키지 구분하기
 - 로그인 기능 붙이기  
 
