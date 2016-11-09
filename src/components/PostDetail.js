@@ -1,28 +1,9 @@
-import React, { Component } from 'react';
-import fetch from 'isomorphic-fetch';
+import React, { Component, PropTypes } from 'react';
 
 class PostDetail extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      post: {
-        name: '',
-        title: '',
-        content: ''
-      }
-    };
-  }
-  componentDidMount() {
-    console.log('PostDetail.componentWillMount');
-    const cuid = this.props.params.cuid;
-    fetch(`/posts/${cuid}`).then((res) => {
-      res.json().then((data) => {
-        this.setState({ post: data.post });
-      });
-    });
-  }
   render() {
-    const post = this.state.post;
+    console.log('PostDetail.render', { props: this.props, state: this.state });
+    const post = this.props.post || { title: '', name: '', content: '' };
     return (
       <div>
         <h3>{post.title}</h3>
@@ -32,5 +13,9 @@ class PostDetail extends Component {
     );
   }
 }
-
+PostDetail.props = {
+  title: PropTypes.string,
+  name: PropTypes.name,
+  content: PropTypes.content
+};
 export default PostDetail;

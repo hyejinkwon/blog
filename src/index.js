@@ -2,19 +2,22 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import createLogger from 'redux-logger';
-import promiseMiddleware from 'redux-promise';
-// import thunkMiddleware from 'redux-thunk';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Root from './components/Root';
+// import createLogger from 'redux-logger';
+// import promiseMiddleware from 'redux-promise';
+import thunkMiddleware from 'redux-thunk';
+
+import Routes from './routes';
 import postReducers from './redux/PostReducer';
 
 const middleware = [];
-//
-const logger = createLogger();
-middleware.push(logger);
-middleware.push(promiseMiddleware);
-// middleware.push(thunkMiddleware);
+
+// const logger = createLogger();
+// middleware.push(logger);
+// middleware.push(promiseMiddleware);
+middleware.push(thunkMiddleware);
 
 const store = createStore(
   postReducers,
@@ -22,10 +25,13 @@ const store = createStore(
 );
 
 // const store = createStore(postReducers);
+injectTapEventPlugin();
 
 render(
   <Provider store={store}>
-    <Root />
+    <MuiThemeProvider>
+      <Routes />
+    </MuiThemeProvider>
   </Provider>,
   global.document.getElementById('root')
 );
