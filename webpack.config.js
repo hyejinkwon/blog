@@ -42,8 +42,8 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loaders: ['react-hot', 'babel?' + JSON.stringify({
-          // cacheDirectory: true,
-          plugins: ['transform-runtime'],
+          cacheDirectory: true,
+          plugins: ['transform-runtime', 'transform-object-rest-spread'],
           presets: ['es2015', 'react', 'stage-0']
         })],
         exclude: /node_modules/
