@@ -21,10 +21,6 @@ npm install -g babel-cli nodemon cross-env
 - nodemon: 파일이 수정 될 때 서버 재 시작
 - cross-env : OS 환경변수값 설정
 
-### 정리
-
-- react-router 사용법
-
 ### TODOS
 
 [major]
@@ -32,7 +28,8 @@ npm install -g babel-cli nodemon cross-env
 - ~~글 목록가져오기, 글 작성, 글 삭제~~
 - ~~fetch 사용~~
 - ~~리덕스 사용~~
-- production vs development 패키지 구분하기
+- ~~리덕스 라우터로 히스토리 관리~~
+- ~~production vs development 패키지 구분하기~~
 - 로그인 기능 붙이기  
 
 [minor]
@@ -41,7 +38,14 @@ npm install -g babel-cli nodemon cross-env
 - 마크다운 가능한 에디터 붙이기
 
 [bugs]
-- 서버 랜더링
+- ~~랜더링 문제(서버는 index.html로 이동됨)~~
+- development 문제
+  - react-hot-loader
+  - path 문제
+- ~~material-ui 모듈 문제~~ [참고](https://codedump.io/share/JVC44fmZDwQC/1/error-in-react-tap-event-pluginsrcinjecttapeventpluginjs)
+
+
 ### 참고
 
-[Babel 사용하기](https://blog.outsider.ne.kr/1176)
+- [Babel 사용하기](https://blog.outsider.ne.kr/1176)
+- [Production Build 시 참고](https://facebook.github.io/react/docs/optimizing-performance.html#use-the-production-build)
