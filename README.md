@@ -30,7 +30,9 @@ npm install -g babel-cli nodemon cross-env
 - ~~리덕스 사용~~
 - ~~리덕스 라우터로 히스토리 관리~~
 - ~~production vs development 패키지 구분하기~~
-- 로그인 기능 붙이기  
+- 로그인 기능 붙이기
+  - firebase (연습)
+  - passport
 
 [minor]
 - 수정 기능, 코멘트 기능
@@ -40,7 +42,7 @@ npm install -g babel-cli nodemon cross-env
 [bugs]
 - ~~랜더링 문제(서버는 index.html로 이동됨)~~
 - development 문제
-  - react-hot-loader
+  - ~react-hot-loader~ version update
   - path 문제
 - ~~material-ui 모듈 문제~~ [참고](https://codedump.io/share/JVC44fmZDwQC/1/error-in-react-tap-event-pluginsrcinjecttapeventpluginjs)
 
