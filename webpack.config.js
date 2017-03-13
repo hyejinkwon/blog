@@ -1,33 +1,37 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   // import(require) 되어 있는 스크립트를 불러온다.
   entry: [
     // 'babel-polyfill', // babel를 이용해 브라우저에서 ES6문법으로 실행하고 싶을때
-    './src/index.js',
     'webpack-dev-server/client?http://0.0.0.0:3001',
-    'webpack/hot/only-dev-server'
+    'webpack/hot/only-dev-server',
+    './assets/css/main.css',
+    './client/index.js'
   ],
 
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
 
   // 파일을 합치고 ./dist/bundle.js 에 저장한다.
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
 
   //개발서버 설정
   devServer: {
     hot: true,  // 파일 수정 시 리로딩 여부
-    colors: true,
+    stats: {
+      colors: true
+    },
     filename: 'bundle.js',
     publicPath: '/',
     historyApiFallback: true,
     // progress: true,
     // inline: true, // webpack-dev-server 의 client를 bundle 에 포함 시키는 것
     // host: '0.0.0.0',  // localhost로 설정 시 외부 접근이 안됨
-    contentBase:  './dist', // index파일 위치
+    contentBase:  path.resolve(__dirname, 'dist'), // index파일 위치
     proxy: {
       '*': 'http://localhost:3000'
     }
@@ -41,13 +45,21 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel?' + JSON.stringify({
-          cacheDirectory: true,
-          plugins: ['transform-runtime', 'transform-object-rest-spread'],
-          presets: ['es2015', 'react', 'stage-0']
-        })],
+        loaders: ['babel'],
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.css?$/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'url',
+        query: {
+          limit: 8192,
+          name: '/assets/[name].[ext]?[hash]'
+        }
+      },
     ]
   },
 

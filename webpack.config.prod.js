@@ -8,7 +8,10 @@ var alias = {};
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    './assets/css/main.css',
+    './client/index.js'
+  ],
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
@@ -22,6 +25,18 @@ module.exports = {
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react', 'stage-0']
+        }
+      },
+      {
+        test: /\.css?$/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'url',
+        query: {
+          limit: 8192,
+          name: '/assets/[name].[ext]?[hash]'
         }
       }
     ]
