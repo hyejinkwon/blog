@@ -1,20 +1,76 @@
 @charset "UTF-8";
 
 html body {
-  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-family: "Roboto", tahoma, verdana, arial, sans-serif;
+  color: #343434;
 }
+
 nav {
   padding: 0 8%;
 }
+
 .container {
-  margin-top: 50px
+  margin-top: 50px;
 }
+
+main.container {
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social {
+  border: 0;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  background-color: #DC4E41;
+  border-radius: 5px;
+}
+.social:hover,
+.social:active,
+.social:focus {
+  background-color: rgba(196, 18, 0, 1);
+}
+
+.social i,
+.social span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.google-plus {
+  display: inline-block;
+  margin-right: 10px;
+  width: 22px;
+  height: 100%;
+  background: url('../googleplus.svg') no-repeat center;
+}
+
+.profile {
+  padding: 0 10px;
+}
+
+.profile img, span {
+  vertical-align: middle;
+}
+
+.profile:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile .avatar {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 copyright {
   margin-bottom: 10px;
-}
-.brand-logo {
-  background: url('../logo.png') no-repeat center center;
-  width: 64px;
-  height: auto;
-  text-indent: -999px;
 }
