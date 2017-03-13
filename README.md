@@ -42,7 +42,7 @@ npm install -g babel-cli nodemon cross-env
 [bugs]
 - ~~랜더링 문제(서버는 index.html로 이동됨)~~
 - development 문제
-  - ~react-hot-loader~ version update
+  - ~~react-hot-loader~~ version update
   - path 문제
 - ~~material-ui 모듈 문제~~ [참고](https://codedump.io/share/JVC44fmZDwQC/1/error-in-react-tap-event-pluginsrcinjecttapeventpluginjs)
 
