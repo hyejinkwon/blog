@@ -1,12 +1,14 @@
 import express from 'express';
 import path from 'path';
-import favicon from 'serve-favicon';
-import bodyParser from 'body-parser';
 
 /* express middleware */
 import morgan from 'morgan';  // HTTP REQUEST LOGGER
+import bodyParser from 'body-parser';
+import favicon from 'serve-favicon';
+
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
+
 import mongoose from 'mongoose';
 import posts from './routes/index';
 
@@ -30,9 +32,9 @@ if (process.env.NODE_ENV === 'development') {
 /* express server setting */
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use('/', express.static(path.join(__dirname, './../dist')));
-app.use(favicon(path.join(__dirname, './../assets/favicon.ico')));
-app.use('/assets', express.static(path.join(__dirname, './../assets')));
+app.use(favicon(path.resolve(__dirname, '../assets/favicon.ico')));
+app.use('/', express.static(path.resolve(__dirname, '../dist')));
+app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 
 /* db connection */
 mongoose.connect('mongodb://localhost:27017/posts');
@@ -41,7 +43,7 @@ mongoose.connect('mongodb://localhost:27017/posts');
 app.use('/api', posts);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './../dist/index.html'));
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
 });
 
 app.listen(port, () => {
