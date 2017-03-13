@@ -5,9 +5,9 @@ import {
   FlatButton, IconMenu, IconButton, MenuItem
 } from 'material-ui';
 
-class PostListView extends Component {
+class PostLists extends Component {
   render() {
-    console.log('PostListView.render', { state: this.state, props: this.props });
+    console.log('PostLists.render', { state: this.state, props: this.props });
     return (
       <div>
         {
@@ -54,4 +54,4 @@ class PostListView extends Component {
   }
 }
 
-export default PostListView;
+export default PostLists;

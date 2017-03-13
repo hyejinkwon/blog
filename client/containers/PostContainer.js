@@ -31,10 +31,9 @@ class PostContainer extends Component {
     if (this.props.params.cuid !== nextProps.params.cuid) {
       this.props.fetchPost(nextProps.params.cuid);
     }
-    if (this.props.posts.length === 0
-      && Object.keys(nextProps.params).length === 0) {
-      this.props.fetchPosts();
-    }
+    // if (this.props.posts.length === 0 && Object.keys(nextProps.params).length === 0) {
+    //   this.props.fetchPosts();
+    // }
   }
   addPost(post) {
     this.props.fetchAddPost(post);

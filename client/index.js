@@ -5,14 +5,13 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
-// import createLogger from 'redux-logger';
+import createLogger from 'redux-logger';
 // import promiseMiddleware from 'redux-promise';
 
+// @plugins material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-// import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-
-// import Routes from './routes';
 import * as reducers from './redux/PostReducer';
 
 import Main from './components/Main';
@@ -26,12 +25,10 @@ import PostDetail from './components/PostDetail';
 
 const middleware = [];
 
-// const logger = createLogger();
-// middleware.push(logger);
-// middleware.push(promiseMiddleware);
+const logger = createLogger();
+middleware.push(logger);
 middleware.push(thunkMiddleware);
 
-// injectTapEventPlugin();
 const reducer = combineReducers({
   ...reducers,
   routing: routerReducer
@@ -41,20 +38,16 @@ const store = createStore(
   reducer,
   applyMiddleware(...middleware)
 );
+const history = syncHistoryWithStore(browserHistory, store);
 
-// const store = createStore(postReducers);
 if (module.hot) {
-  // module.hot.accept('./assets');
   module.hot.accept('./redux/PostReducer', () => {
     const nextReducer = require('./redux/PostReducer').default;
     store.replaceReducer(nextReducer);
   });
 }
-const history = syncHistoryWithStore(browserHistory, store);
 
-// history.listen((location, action) => {
-//   console.log('history.listen', location, action);
-// });
+injectTapEventPlugin();
 
 render(
   <Provider store={store}>
@@ -75,8 +68,3 @@ render(
   </Provider>,
   global.document.getElementById('root')
 );
-
-// 문제점.. 로컬 state 를 유지하지 않음..
-// if (module.hot) {
-//   module.hot.accpet();
-// }
