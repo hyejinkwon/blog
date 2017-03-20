@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import moment from 'moment';
+
 import {
   Card, CardHeader, CardTitle, CardText, CardActions,
   FlatButton, IconMenu, IconButton, MenuItem
@@ -36,7 +38,7 @@ class PostLists extends Component {
               </IconMenu>
               <CardHeader
                 title={post.name}
-                subtitle={post.updated}
+                subtitle={moment(post.updated).format('YYYY-MM-DD hh:mm:ss')}
                 avatar="/assets/domain-bk.jpg"
               />
               <CardTitle title={post.title} />
